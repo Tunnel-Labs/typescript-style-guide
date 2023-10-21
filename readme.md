@@ -21,6 +21,20 @@ export type SelectionItem<$Selection> =
   NonNullable<$Selection>;
 ```
 
+```typescript
+// prettier-ignore
+export type TunnelErrorDefinition<
+  $Message extends string,
+  $SubstitutionSchemas extends Record<string, ZodSchema>
+> =
+  (
+    IsEmptyObject<z.infer<ZodObject<$SubstitutionSchemas>>> extends true ?
+      () => TunnelError<ErrorSchema<$Message, $SubstitutionSchemas>> :
+    (substitutions: z.infer<ZodObject<$SubstitutionSchemas>>) => TunnelError<ErrorSchema<$Message, $SubstitutionSchemas>>
+  ) &
+  { key: string };
+```
+
 ### Mapped Types
 
 ```typescript
