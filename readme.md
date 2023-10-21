@@ -4,7 +4,7 @@
 
 1. Top-level interfaces and types must use `PascalCase` identifiers.
 2. Generic type parameters and temporary types must use `PascalCase` identifiers and start with a dollar sign (`$`).
-3. Lines must either start with an identifier or only contain symbols.
+3. If a complex type is split across multiple lines, these lines must either start with an identifier or contain an entire subtype within that line.
 4. The indentation of an `extends` conditional branch should follow the format similar to a switch statement.
 
 ## Examples
